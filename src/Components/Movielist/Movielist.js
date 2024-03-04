@@ -4,9 +4,9 @@ import "./Movielist.css";
 const Movielist = ({ filterMovie }) => {
   return (
     <div className="movie-list">
-      {filterMovie.map((movie, index) => {
-        return <MovieCard movie={movie} index={index} />;
-      })}
+      {filterMovie.map((movie) => (
+        <MovieCard key={movie.id} movie={movie} />
+      ))}
     </div>
   );
 };
