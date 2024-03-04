@@ -3,6 +3,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Filter from "./Components/Filter/Filter";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import MovieDetails from "./Components/MovieDetails/MovieDetails";
 
 function App() {
   const [ratingchange, setRetingchange] = useState(1);
@@ -135,11 +137,22 @@ function App() {
         handelesave={handelesave}
       />
       <br />
-      <Filter
-        ratingChange={ratingchange}
-        searchInput={searchInput}
-        movieData={movieData}
-      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Filter
+              ratingChange={ratingchange}
+              searchInput={searchInput}
+              movieData={movieData}
+            />
+          }
+        />
+        <Route
+          path="/movie-details/:movieId"
+          element={<MovieDetails movieData={movieData} />}
+        />
+      </Routes>
     </>
   );
 }

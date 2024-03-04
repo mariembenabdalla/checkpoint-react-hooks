@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 import ReactStars from "react-rating-stars-component";
 import "./MovieCard.css";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie, index }) => {
   return (
@@ -21,7 +22,9 @@ const MovieCard = ({ movie, index }) => {
           className="img"
         />
         <Card.Body>
-          <Card.Title>{movie.title}</Card.Title>
+          <Card.Title>
+            <Link to={`/movie-details/${movie.id}`}>{movie.title}</Link>
+          </Card.Title>
           <Card.Text>{movie.description}</Card.Text>
           <ReactStars
             count={5}

@@ -29,7 +29,7 @@ const AddMovie = ({
               <Form.Control
                 type="text"
                 placeholder="Title"
-                name="Title"
+                name="title"
                 onChange={handleChange}
               />
             </Form.Group>
@@ -38,7 +38,7 @@ const AddMovie = ({
               <Form.Control
                 type="text"
                 placeholder="posterUrl"
-                name="PosterUrl"
+                name="posterUrl"
                 onChange={handleChange}
               />
             </Form.Group>
@@ -47,7 +47,7 @@ const AddMovie = ({
               <Form.Control
                 type="number"
                 placeholder="rating"
-                name="Rating"
+                name="rating"
                 onChange={handleChange}
               />
             </Form.Group>
